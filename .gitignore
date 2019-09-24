@@ -1,3 +1,4 @@
 src/*
 res/archives/*
 graphics/*.psd
+demo/*.log
