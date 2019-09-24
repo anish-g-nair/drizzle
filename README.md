@@ -1,13 +1,13 @@
-# Drizzle ![](https://github.com/anishnair02/drizzle/blob/master/graphics/logo/drizzle.png?raw=true =30x30)
+# Drizzle
 _The simplest jQuery filtering and sorting library ever!_
 
 ## Live Demo
 Check the live demo <a href="https://anishnair02.github.io/drizzle/" target="_blank">here</a>
 
 ## Vision
-<center>
-<img src="https://github.com/anishnair02/drizzle/blob/master/graphics/logo/drizzle.png?raw=true" width="90px" height="90px"/>
-</center>
+<p align="center">
+<img src="https://github.com/anishnair02/drizzle/blob/master/graphics/logo/drizzle.png?raw=true" width="100px" height="100px"/>
+</p>
 
 The main idea behind drizzle is to keep things simple and avoid complex conditions, thus evading confusion. The name **drizzle** here refers to **filtering** (which reduces the result, just like heavy rains to drizzle) and **sorting** (changes in the climatic conditions which affect rains). Too much of linking, right? Let's move into the coding/technical aspect. ;-)
 
