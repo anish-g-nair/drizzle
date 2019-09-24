@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drizzle</title>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/semantic.min.js"></script>
+    <script type="text/javascript" src="./js/drizzle.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <!-- <script type="text/javascript" src="./js/highlight.js"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/highlight.css">
+
+    <style type="text/css">
+        body {
+            margin: 3em 0;
+        }
+        .ui.text.red{
+            color: #db2828!important;
+        }
+        .ui.text.orange{
+            color: #f2711c!important
+        }
+        .ui.text.yellow{
+            color: #fbbd08!important;
+        }
+        .ui.text.olive{
+            color: #b5cc18!important;
+        }
+        .ui.text.green{
+            color: #21ba45!important;
+        }
+        .ui.text.teal{
+            color: #00b5ad!important;
+        }
+        .ui.text.blue{
+            color: #2185d0!important;
+        }
+        .ui.text.purple{
+            color: #a333c8!important;
+        }
+        .ui.text.violet{
+            color: #6435c9!important;
+        }
+        .ui.text.pink{
+            color: #e03997!important;
+        }
+        .ui.text.brown{
+            color: #a5673f!important;
+        }
+        .ui.text.grey{
+            color: #767676!important;
+        }
+        .ui.text.white{
+            color: #ffffff!important;
+        }
+        .ui.text.black{
+            color: #000000!important;
+        }
+    </style>
+</head>
+<body>
+
+<div class="ui centered grid">
+    <div class="twelve wide column">
+        <!-- Initializing -->
+
+    <div class="ui container" style="margin:0 !important;">
+        <h1 class="ui header">
+            Drizzle
+            <div class="sub header">The simplest jQuery filtering and sorting library ever!</div>
+        </h1>
+    </div>
+
+    The main idea behind drizzle is to keep things simple and avoid complex conditions, thus evading confusion.
+    No more time-wasting. Let's get started with it.
+
+    <div class="ui header">Including drizzle</div>
+    <div class="ui top attached compacts segments">
+        <div class="ui padded segment">
+            <div>
+                <div class="">The first thing to do is to include the plugin file to your html.</div>
+                <p>To include the plugin file, you can either download it include it locally or use CDN path</p>
+                <pre class="ui black">
+                    <code class="html">
+                        &lt;script type="text/javascript" src="./js/drizzle.min.js"&gt;&lt;/script&gt;
+                        &lt;!-- OR --&gt;
+                        &lt;script type="text/javascript" src="https://cdn.jsdelivr.net/gh/anishnair02/drizzle/dist/drizzle.min.js"&gt;&lt;/script&gt;
+                    </code>
+                </pre>
+
+                <div class="ui compact teal message">
+                    <!-- <i class="close icon"></i> -->
+                    <div class="header">
+                        Pros and cons of using local vs CDN file
+                    </div>
+                    <ul class="lists">
+                        <li>Downloading and using the plugin file locally in your project is faster.</li>
+                        <li>
+                            But using CDN path has a great advantage - you get the latest copy of the JS file.
+                            <br/>
+                            Also note, browser caching or server side caching may affect fetching the latest version of drizzle.min.js <br/>since the filename remains the same and at times maybe cached.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+       <!--  <div class="ui padded segment">
+            <div class="content">
+                <div class="header">container - Refers to the parent (container/element).</div>
+                <div class="meta">It's basically a selector. Can be id, classname, or any other attribute [attribute=value]</div>
+                <div class="description"></div>
+            </div>
+        </div>
+        <div class="ui padded segment">
+            <div class="content">
+                <div class="header">content (selector - Refers to children (child/content)</div>
+                <div class="meta">selector - id, classname, or any [attribute=value]</div>
+                <div class="description"></div>
+            </div>
+        </div> -->
+    </div>
+
+
+    <div class="ui header">Initializing drizzle</div>
+    <div class="ui top attached compacts segments">
+        <div class="ui padded segment">
+            <div>
+                <div class="">Once you have included the plugin file, you need initialize it once (for a particluar parent-child element relationship) to be able to filter and sort elements.
+                <br/>Go to your custom js file or create a new one - say "main.js" and include it to your html file just like you did above.</div>
+                <p>To initialize, please refer to the code below</p>
+                <pre>
+                    <code class="javascript">
+                        var grid = $(<b>container</b>).drizzle({child:<b>child elements</b>});
+                    </code>
+                </pre>
+                <p>Here, we are defining the <b>container/parent</b> element and the <b>child</b> elements so that drizzle understands it.</p>
+                <p><b>Container</b> and <b>child elements</b> can be any HTML/jQuery element(i.e a jQuery selector) and you can define it using an id, classname or by using any attribute-value pair</span></p>
+                <p class="">
+                    <span class="ui olive label">#id</span>
+                    <span class="ui olive label">.classname</span>
+                    <span class="ui olive label">[attribute=value]</span>
+                </p>
+            </div>
+        </div>
+       <!--  <div class="ui padded segment">
+            <div class="content">
+                <div class="header">container - Refers to the parent (container/element).</div>
+                <div class="meta">It's basically a selector. Can be id, classname, or any other attribute [attribute=value]</div>
+                <div class="description"></div>
+            </div>
+        </div>
+        <div class="ui padded segment">
+            <div class="content">
+                <div class="header">content (selector - Refers to children (child/content)</div>
+                <div class="meta">selector - id, classname, or any [attribute=value]</div>
+                <div class="description"></div>
+            </div>
+        </div> -->
+        <div class="ui padded segment">
+            <div class="content">
+                <div class="header">Example</div>
+                <!-- <div class="meta">selector - id, classname, or any [attribute=value]</div> -->
+                <div class="description">
+                    <pre>
+                        <code>
+                            var grid = $('.cards').drizzle({child: '.card'});
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        <!-- Cards -->
+        <div class="ui link people cards six column centered grid">
+            <!-- Nora - Female - Member - Spotted Horses -->
+            <div class="card column old" data-role="member" data-gender="female" data-team="spotted-horses">
+                <div class="image">
+                    <img src="./img/avatars/nora-min.png">
+                </div>
+                <div class="content">
+                    <div class="header name">Nora Min</div>
+                    <div class="meta">
+                        <span>Member</span>
+                        <span class="right floated right aligned" data-gender="female"><i class="female icon"></i> Female</span>
+                    </div>
+                    <div class="description">
+                        <i class="fighter jet orange large icon"></i>
+                        Spotted Horses
+                    </div>
+                </div>
+                <div class="extra content">
+                    <span class="right floated">
+                        <i class="flag outline icon"></i>
+                        <span class="wins">10</span>
+                    </span>
+                    <span>
+                        <i class="star outline icon"></i>
+                        <span data-stars=79>79</span>
+                    </span>
+                </div>
+            </div>
+            <!-- Anderson - Male - Captain - Spotted Horses -->
+            <div class="card column old" data-role="captain" data-gender="male" data-team="spotted-horses">
+                <div class="image">
+                    <img src="./img/avatars/anderson-lipponen.png">
+                </div>
+                <div class="content">
+                    <div class="header name">Anderson Lipponen</div>
+                    <div class="meta">
+                        <span>Captain</span>
+                        <span class="right floated right aligned" data-gender="male"><i class="male icon"></i> Male</span>
+                    </div>
+                    <div class="description">
+                        <i class="fighter jet orange large icon"></i>
+                        Spotted Horses
+                    </div>
+                </div>
+                <div class="extra content">
+                    <span class="right floated">
+                        <i class="flag outline icon"></i>
+                        <span class="wins">20</span>
+                    </span>
+                    <span>
+                        <i class="star outline icon"></i>
+                        <span data-stars=75>75</span>
+                    </span>
+                </div>
+            </div>
+            <!-- Shane - Male - Member - Juvenile Alligators -->
+            <div class="card column old" data-role="member" data-gender="male" data-team="juvenile-alligators">
+                <div class="image">
+                    <img src="./img/avatars/shane-rudd.png">
+                </div>
+                <div class="content">
+                    <div class="header name">Shane Rudd</div>
+                    <div class="meta">
+                        <span>Member</span>
+                        <span class="right floated right aligned" data-gender="male"><i class="male icon"></i> Male</span>
+                    </div>
+                    <div class="description">
+                        <i class="rocket green large icon"></i>
+                        Juvenile Alligators
+                    </div>
+                </div>
+                <div class="extra content">
+                    <span class="right floated">
+                        <i class="flag outline icon"></i>
+                        <span class="wins">16</span>
+                    </span>
+                    <span>
+                        <i class="star outline icon"></i>
+                        <span data-stars=67>67</span>
+                    </span>
+                </div>
+            </div>
+            <!-- Sherwynd - Male - Member - Wary Foxes -->
+            <div class="card column old" data-role="member" data-gender="male" data-team="wary-foxes">
+                <div class="image">
+                    <img src="./img/avatars/sherwynd-rueckl.png">
+                </div>
+                <div class="content">
+                    <div class="header name">Sherwynd Rueckl</div>
+                    <div class="meta">
+                        <span>Member</span>
+                        <span class="right floated right aligned" data-gender="male"><i class="male icon"></i> Male</span>
+                    </div>
+                    <div class="description">
+                        <i class="plane teal large icon"></i>
+                        Wary Foxes
+                    </div>
+                </div>
+                <div class="extra content">
+                    <span class="right floated">
+                        <i class="flag outline icon"></i>
+                        <span class="wins">22</span>
+                    </span>
+                    <span>
+                        <i class="star outline icon"></i>
+                        <span data-stars=75>75</span>
+                    </span>
+                </div>
+            </div>
+            <!-- Solomon - Male - Member - Spotted Horses -->
+            <div class="card column new" data-role="member" data-gender="male" data-team="spotted-horses">
+                <div class="image">
+                    <img src="./img/avatars/solomon-vetrovs.png">
+                </div>
+                <div class="content">
+                    <div class="header name">Solomon Vetrovs</div>
+                    <div class="meta">
+                        <span>Member</span>
+                        <span class="right floated right aligned" data-gender="male"><i class="male icon"></i> Male</span>
+                    </div>
+                    <div class="description">
+                        <i class="fighter jet orange large icon"></i>
+                        Spotted Horses
+                    </div>
+                </div>
+                <div class="extra content">
+                    <span class="right floated">
+                        <i class="flag outline icon"></i>
+                        <span class="wins">35</span>
+                    </span>
+                    <span>
+                        <i class="star outline icon"></i>
+                        <span data-stars=83>83</span>
+                    </span>
+                </div>
+            </div>
+            <!-- Willem - Male - Captain - Wary Foxes -->
+            <div class="card column old" data-role="captain" data-gender="male" data-team="wary-foxes">
+                <div class="image">
+                    <img src="./img/avatars/willem-viggiani.png">
+                </div>
+                <div class="content">
+                    <div class="header name">Willem Viggiani</div>
+                    <div class="meta">
+                        <span>Captain</span>
+                        <span class="right floated right aligned" data-gender="male"><i class="male icon"></i> Male</span>
+                    </div>
+                    <div class="description">
+                        <i class="plane teal large icon"></i>
+                        Wary Foxes
+                    </div>
+                </div>
+                <div class="extra content">
+                    <span class="right floated">
+                        <i class="flag outline icon"></i>
+                        <span class="wins">9</span>
+                    </span>
+                    <span>
+                        <i class="star outline icon"></i>
+                        <span data-stars=96>96</span>
+                    </span>
+                </div>
+            </div>
+            <!-- Yevette - Female - Member - Juvenile Alligators -->
+            <div class="card column old" data-role="member" data-gender="female" data-team="juvenile-alligators">
+                <div class="image">
+                    <img src="./img/avatars/yevette-molaroni.png">
+                </div>
+                <div class="content">
+                    <div class="header name">Yevette Molaroni</div>
+                    <div class="meta">
+                        <span>Member</span>
+                        <span class="right floated right aligned" data-gender="female"><i class="female icon"></i> Female</span>
+                    </div>
+                    <div class="description">
+                        <i class="rocket green large icon"></i>
+                        Juvenile Alligators
+                    </div>
+                </div>
+                <div class="extra content">
+                    <span class="right floated">
+                        <i class="flag outline icon"></i>
+                        <span class="wins">27</span>
+                    </span>
+                    <span>
+                        <i class="star outline icon"></i>
+                        <span data-stars=75>75</span>
+                    </span>
+                </div>
+            </div>
+            <!-- Corine - Female - Captain - Juvenile Alligators -->
+            <div class="card column old" data-role="captain" data-gender="female" data-team="juvenile-alligators">
+                <div class="image">
+                    <img src="./img/avatars/corine-truman.png">
+                </div>
+                <div class="content">
+                    <div class="header name">Corine Truman</div>
+                    <div class="meta">
+                        <span>Captain</span>
+                        <span class="right floated right aligned" data-gender="female"><i class="female icon"></i> Female</span>
+                    </div>
+                    <div class="description">
+                        <i class="rocket green large icon"></i>
+                        Juvenile Alligators
+                    </div>
+                </div>
+                <div class="extra content">
+                    <span class="right floated">
+                        <i class="flag outline icon"></i>
+                        <span class="wins">17</span>
+                    </span>
+                    <span>
+                        <i class="star outline icon"></i>
+                        <span data-stars=102>102</span>
+                    </span>
+                </div>
+            </div>
+            <!-- Everard - Male - Member - Wary Foxes -->
+            <div class="card column old" data-role="member" data-gender="male" data-team="wary-foxes">
+                <div class="image">
+                    <img src="./img/avatars/everard-supinger.png">
+                </div>
+                <div class="content">
+                    <div class="header name">Everard Supinger</div>
+                    <div class="meta">
+                        <span>Member</span>
+                        <span class="right floated right aligned" data-gender="male"><i class="male icon"></i> Male</span>
+                    </div>
+                    <div class="description">
+                        <i class="plane teal large icon"></i>
+                        Wary Foxes
+                    </div>
+                </div>
+                <div class="extra content">
+                    <span class="right floated">
+                        <i class="flag outline icon"></i>
+                        <span class="wins">19</span>
+                    </span>
+                    <span>
+                        <i class="star outline icon"></i>
+                        <span data-stars=84>84</span>
+                    </span>
+                </div>
+            </div>
+            <!-- Guenna - Female - Member - Wary Foxes -->
+            <div class="card column new" data-role="member" data-gender="female" data-team="wary-foxes">
+                <div class="image">
+                    <img src="./img/avatars/guenna-lashley.png">
+                </div>
+                <div class="content">
+                    <div class="header name">Guenna Lashley</div>
+                    <div class="meta">
+                        <span>Member</span>
+                        <span class="right floated right aligned" data-gender="female"><i class="female icon"></i> Female</span>
+                    </div>
+                    <div class="description">
+                        <i class="plane teal large icon"></i>
+                        Wary Foxes
+                    </div>
+                </div>
+                <div class="extra content">
+                    <span class="right floated">
+                        <i class="flag outline icon"></i>
+                        <span class="wins">21</span>
+                    </span>
+                    <span>
+                        <i class="star outline icon"></i>
+                        <span data-stars=109>109</span>
+                    </span>
+                </div>
+            </div>
+            <!-- Isadore - Female - Member - Juvenile Alligators -->
+            <div class="card column old" data-role="member" data-gender="female" data-team="juvenile-alligators">
+                <div class="image">
+                    <img src="./img/avatars/isadore-withka.png">
+                </div>
+                <div class="content">
+                    <div class="header name">Isadore Withka</div>
+                    <div class="meta">
+                        <span>Member</span>
+                        <span class="right floated right aligned" data-gender="female"><i class="female icon"></i> Female</span>
+                    </div>
+                    <div class="description">
+                        <i class="rocket green large icon"></i>
+                        Juvenile Alligators
+                    </div>
+                </div>
+                <div class="extra content">
+                    <span class="right floated">
+                        <i class="flag outline icon"></i>
+                        <span class="wins">50</span>
+                    </span>
+                    <span>
+                        <i class="star outline icon"></i>
+                        <span data-stars=99>99</span>
+                    </span>
+                </div>
+            </div>
+            <!-- Katalin - Female - Member - Spotted Horses -->
+            <div class="card column old" data-role="member" data-gender="male" data-team="spotted-horses">
+                <div class="image">
+                    <img src="./img/avatars/katalin-flammia.png">
+                </div>
+                <div class="content">
+                    <div class="header name">Katalin Flammia</div>
+                    <div class="meta">
+                        <span>Member</span>
+                        <span class="right floated right aligned" data-gender="female"><i class="female icon"></i> Female</span>
+                    </div>
+                    <div class="description">
+                        <i class="fighter jet orange large icon"></i>
+                        Spotted Horses
+                    </div>
+                </div>
+                <div class="extra content">
+                    <span class="right floated">
+                        <i class="flag outline icon"></i>
+                        <span class="wins">41</span>
+                    </span>
+                    <span>
+                        <i class="star outline icon"></i>
+                        <span data-stars=72>72</span>
+                    </span>
+                </div>
+            </div>
+            <!-- Luis - Male - Member - Spotted Horses -->
+            <div class="card column old" data-role="member" data-gender="male" data-team="spotted-horses">
+                <div class="image">
+                    <img src="./img/avatars/luis-colvin.png">
+                </div>
+                <div class="content">
+                    <div class="header name">Luis Colvin</div>
+                    <div class="meta">
+                        <span>Member</span>
+                        <span class="right floated right aligned" data-gender="male"><i class="male icon"></i> Male</span>
+                    </div>
+                    <div class="description">
+                        <i class="fighter jet orange large icon"></i>
+                        Spotted Horses
+                    </div>
+                </div>
+                <div class="extra content">
+                    <span class="right floated">
+                        <i class="flag outline icon"></i>
+                        <span class="wins">35</span>
+                    </span>
+                    <span>
+                        <i class="star outline icon"></i>
+                        <span data-stars=91>91</span>
+                    </span>
+                </div>
+            </div>
+            <!-- Michelina - Female - Member - Wary Foxes -->
+            <div class="card column old" data-role="member" data-gender="female" data-team="wary-foxes">
+                <div class="image">
+                    <img src="./img/avatars/michelina-clayborne.png">
+                </div>
+                <div class="content">
+                    <div class="header name">Michelina Clayborne</div>
+                    <div class="meta">
+                        <span>Member</span>
+                        <span class="right floated right aligned" data-gender="female"><i class="female icon"></i> Female</span>
+                    </div>
+                    <div class="description">
+                        <i class="plane teal large icon"></i>
+                        Wary Foxes
+                    </div>
+                </div>
+                <div class="extra content">
+                    <span class="right floated">
+                        <i class="flag outline icon"></i>
+                        <span class="wins">25</span>
+                    </span>
+                    <span>
+                        <i class="star outline icon"></i>
+                        <span data-stars=88>88</span>
+                    </span>
+                </div>
+            </div>
+            <!-- Nathan - Male - Member - Juvenile Alligators -->
+            <div class="card column new" data-role="member" data-gender="male" data-team="juvenile-alligators">
+                <div class="image">
+                    <img src="./img/avatars/nathan-barker.png">
+                </div>
+                <div class="content">
+                    <div class="header name">Nathan Barker</div>
+                    <div class="meta">
+                        <span>Member</span>
+                        <span class="right floated right aligned" data-gender="male"><i class="male icon"></i> Male</span>
+                    </div>
+                    <div class="description">
+                        <i class="rocket green large icon"></i>
+                        Juvenile Alligators
+                    </div>
+                </div>
+                <div class="extra content">
+                    <span class="right floated">
+                        <i class="flag outline icon"></i>
+                        <span class="wins">5</span>
+                    </span>
+                    <span>
+                        <i class="star outline icon"></i>
+                        <span data-stars=82>82</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filtering -->
+        <div class="ui segments filter-group">
+            <div class="ui segment">
+                <div class="ui medium header">Filtering</div>
+            </div>
+
+            <div class="ui segment">
+                <div class="ui small header">By joining date</div>
+                <button class="ui button filter old">Old<br/><br/>grid.filter('.filter.old')</button>
+                <button class="ui button filter new">New<br/><br/>grid.filter('.filter.new')</button>
+            </div>
+
+            <div class="ui segment">
+                <div class="ui small header">By gender</div>
+                <button class="ui button filter dg-male"><i class="male white icon"></i>Male<br/><br/><i>grid.filter('.filter.dg-male')</i></button>
+                <button class="ui button filter dg-female"><i class="female white icon"></i>Female<br/><br/><i>grid.filter('.filter.dg-female')</i></button>
+            </div>
+
+            <div class="ui segment">
+                <div class="ui small header">By role</div>
+                <button class="ui button filter dr-member">Member<br/><br/><i>grid.filter('[data-role="member"]')</i></button>
+                <button class="ui button filter dr-captain">Captain<br/><br/><i>grid.filter('[data-role="captain"]')</i></button>
+            </div>
+
+            <div class="ui segment">
+                <div class="ui small header">By team</div>
+                <button class="ui green button filter dt-juvenile-alligators"><i class="rocket white icon"></i>Juvenile Alligators<br/><br/><i>grid.filter('[data-team="juvenile-alligators"]')</i></button>
+                <button class="ui orange button filter dt-spotted-horses"><i class="fighter jet white icon"></i>Spotted Horses<br/><br/><i>grid.filter('[data-team="spotted-horses"]')</i></button>
+                <button class="ui teal button filter dt-wary-foxes"><i class="plane white icon"></i>Wary Foxes<br/><br/><i>grid.filter('[data-team="wary-foxes"]')</i></button>
+            </div>
+
+            <div class="ui segment">
+                <div class="ui small header">Unfilter</div>
+                <button class="ui violet button filter rain">grid.rain()</button>
+                <button class="ui violet button filter unfilter">grid.unfilter()</button>
+                <button class="ui violet button filter unfilter">grid.filter('*')</button>
+            </div>
+        </div>
+
+        <!-- Sorting -->
+        <div class="ui segments filter-group">
+            <div class="ui segment">
+                <div class="ui medium header">Sorting</div>
+            </div>
+            
+            <div class="ui segment">
+                <div class="ui small header">By Name</div>
+                <button class="ui button sort name-asc">ASC | <i>.content .header.name</i><br/><br/><i>grid.sort('.content .header.name', {order: 'asc'});</i></button>
+                <button class="ui button sort name-desc">DESC | <i>.content .header.name</i><br/><br/><i>grid.sort('.content .header.name', {order: 'desc'});</i></button>
+            </div>
+
+            <div class="ui segment">
+                <div class="ui small header">By wins</div>
+                <button class="ui button sort wins-asc">ASC | <i>.extra.content .wins</i><br/><br/><i>grid.sort('[data-stars]');</i></button>
+                <button class="ui button sort wins-desc">DESC | <i>.extra.content .wins</i><br/><br/><i>grid.sort('[data-stars]', {order: 'desc'});</i></button>
+            </div>
+
+            <div class="ui segment">
+                <div class="ui small header">By stars</div>
+                <button class="ui button sort stars-asc">ASC | <i>[data-stars]</i><br/><br/><i>grid.sort('.extra.content .wins', {order: 'asc', isNumber: true});</i></button>
+                <button class="ui button sort stars-desc">DESC | <i>[data-stars]</i><br/><br/><i>grid.sort('.extra.content .wins', {order: 'desc', isNumber: true});</i>/button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
