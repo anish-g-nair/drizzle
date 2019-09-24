@@ -1,11 +1,15 @@
-# Drizzle ![](https://raw.githubusercontent.com/anishnair02/drizzle/master/graphics/logo/drizzle.png =50x50)
+# Drizzle ![](https://github.com/anishnair02/drizzle/blob/master/graphics/logo/drizzle.png?raw=true =30x30)
 _The simplest jQuery filtering and sorting library ever!_
-
-![](https://raw.githubusercontent.com/anishnair02/drizzle/master/graphics/logo/drizzle.png =200x200)The main idea behind drizzle is to keep things simple and avoid complex conditions, thus evading confusion.
-
 
 ## Live Demo
 Check the live demo <a href="https://anishnair02.github.io/drizzle/" target="_blank">here</a>
+
+## Vision
+<center>
+<img src="https://github.com/anishnair02/drizzle/blob/master/graphics/logo/drizzle.png?raw=true" width="90px" height="90px"/>
+</center>
+
+The main idea behind drizzle is to keep things simple and avoid complex conditions, thus evading confusion. The name **drizzle** here refers to **filtering** (which reduces the result, just like heavy rains to drizzle) and **sorting** (changes in the climatic conditions which affect rains). Too much of linking, right? Let's move into the coding/technical aspect. ;-)
 
 ## Including drizzle
 The first thing to do is to include the plugin file to your html.
