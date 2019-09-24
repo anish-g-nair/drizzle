@@ -1,4 +1,3 @@
-
 # Drizzle
 _The simplest jQuery filtering and sorting library ever!_
 
