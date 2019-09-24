@@ -1,10 +1,11 @@
-# Drizzle
+# Drizzle ![](https://raw.githubusercontent.com/anishnair02/drizzle/master/graphics/logo/drizzle.png =50x50)
 _The simplest jQuery filtering and sorting library ever!_
 
-The main idea behind drizzle is to keep things simple and avoid complex conditions, thus evading confusion.
+![](https://raw.githubusercontent.com/anishnair02/drizzle/master/graphics/logo/drizzle.png =200x200)The main idea behind drizzle is to keep things simple and avoid complex conditions, thus evading confusion.
+
 
 ## Live Demo
-Please check out the live demo <a href="https://anishnair02.github.io/drizzle/" target="_blank">here</a>
+Check the live demo <a href="https://anishnair02.github.io/drizzle/" target="_blank">here</a>
 
 ## Including drizzle
 The first thing to do is to include the plugin file to your html.
@@ -36,8 +37,8 @@ var grid = $(container).drizzle({child: child-elements});
 Here, we are defining the **container (the parent)** element and the **child (all the children)** elements so that drizzle understands it.
 
 **Container** and **child** elements can be any HTML/jQuery element (i.e a [jQuery selector]([https://api.jquery.com/category/selectors/](https://api.jquery.com/category/selectors/))) and you can define it using an `id`, `classname` or by using any `attribute-value` pair
-> #id ```#person```
-> .classname ```.people``` 
+> #id ```#person```<br/>
+> .classname ```.people``` <br/>
 > attribute=value ```type="people"```
 
 #### Example
@@ -91,5 +92,8 @@ grid.unfilter();
 /* OR */
 grid.rain();
 /* OR */
-grid.filter('*')        
+grid.filter('*')
 ```
+
+#### Resources
+- Used <a href="https://semantic-ui.com/" target="_blank">Semantic UI</a> for demo/docs
