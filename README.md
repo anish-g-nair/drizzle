@@ -4,7 +4,7 @@ _The simplest jQuery filtering and sorting library ever!_
 The main idea behind drizzle is to keep things simple and avoid complex conditions, thus evading confusion.
 
 ## Live Demo
-Please check out the live demo [here](https://anishnair02.github.io/drizzle/)
+Please check out the live demo <a href="https://anishnair02.github.io/drizzle/" target="_blank">here</a>
 
 ## Including drizzle
 The first thing to do is to include the plugin file to your html.
