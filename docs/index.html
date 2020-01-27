@@ -85,7 +85,7 @@
     <div class="ui top attached compacts segments">
         <div class="ui padded segment">
             <div>
-                <div class="">The first thing to do is to include the plugin file to your html.</div>
+                <div>The first thing to do is to include the plugin file to your html.</div>
                 <p>To include the plugin file, you can either download it include it locally or use CDN path</p>
                 <pre class="ui black">
                     <code class="html">
@@ -132,7 +132,7 @@
     <div class="ui top attached compacts segments">
         <div class="ui padded segment">
             <div>
-                <div class="">Once you have included the plugin file, you need initialize it once (for a particluar parent-child element relationship) to be able to filter and sort elements.
+                <div>Once you have included the plugin file, you need initialize it once (for a particluar parent-child element relationship) to be able to filter and sort elements.
                 <br/>Go to your custom js file or create a new one - say "main.js" and include it to your html file just like you did above.</div>
                 <p>To initialize, please refer to the code below</p>
                 <pre>
@@ -141,8 +141,8 @@
                     </code>
                 </pre>
                 <p>Here, we are defining the <b>container/parent</b> element and the <b>child</b> elements so that drizzle understands it.</p>
-                <p><b>Container</b> and <b>child elements</b> can be any HTML/jQuery element(i.e a jQuery selector) and you can define it using an id, classname or by using any attribute-value pair</span></p>
-                <p class="">
+                <p><b>Container</b> and <b>child elements</b> can be any HTML/jQuery element(i.e a jQuery selector) and you can define it using an id, classname or by using any attribute-value pair</p>
+                <p>
                     <span class="ui olive label">#id</span>
                     <span class="ui olive label">.classname</span>
                     <span class="ui olive label">[attribute=value]</span>
@@ -177,7 +177,97 @@
             </div>
         </div>
     </div>
-        
+
+    <div class="ui header">Filtering</div>
+    <div class="ui top attached compacts segments">
+        <div class="ui padded segment">
+            <div>
+                <div>To filter the children, use the filter method</div>
+                <pre class="ui black">
+                    <code class="html">
+                        grid.filter(element);
+                    </code>
+                </pre>
+
+                <p><b>Element</b> can be any HTML/jQuery element(i.e a jQuery selector) and you can define it using an id, classname or by using any attribute-value pair</p>
+                <p>
+                    <span class="ui olive label">#id</span>
+                    <span class="ui olive label">.classname</span>
+                    <span class="ui olive label">[attribute=value]</span>
+                </p>
+            </div>
+        </div>
+        <div class="ui padded segment">
+            <div class="content">
+                <div class="header">Example</div>
+                <!-- <div class="meta">selector - id, classname, or any [attribute=value]</div> -->
+                <div class="description">
+                    <pre>
+                        <code>
+                            grid.filter('.members.new');
+                            /* OR */
+                            grid.filter('#customer-21');
+                            /* OR */
+                            grid.filter('[data-role="captain"]');
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui header">Sorting</div>
+    <div class="ui top attached compacts segments">
+        <div class="ui padded segment">
+            <div>
+                <div>To sort the children, use the sort method</div>
+                <pre class="ui black">
+                    <code class="html">
+                        grid.sort(element, [options]);
+                    </code>
+                </pre>
+
+                <p><b>Element</b> can be any HTML/jQuery element(i.e a jQuery selector) and you can define it using an id, classname or by using any attribute-value pair</p>
+                <p>
+                    <span class="ui olive label">#id</span>
+                    <span class="ui olive label">.classname</span>
+                    <span class="ui olive label">[attribute=value]</span>
+                </p>
+            </div>
+        </div>
+        <div class="ui padded segment">
+            <div class="content">
+                <div class="header">Example</div>
+                <!-- <div class="meta">selector - id, classname, or any [attribute=value]</div> -->
+                <div class="description">
+                    <pre>
+                        <code>
+                           grid.sort('.content .members.new', {order: 'desc'});
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui header">Unfilter or Reset</div>
+    <div class="ui top attached compacts segments">
+        <div class="ui padded segment">
+            <div>
+                <div>To reset or unfilter, use any of the below methods</div>
+                <pre class="ui black">
+                    <code class="html">
+                        grid.unfilter();
+                        /* OR */
+                        grid.rain();
+                        /* OR */
+                        grid.filter('*')
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+
         <!-- Cards -->
         <div class="ui segments filter-group">
             <div class="ui segment">
@@ -598,7 +688,10 @@
         <div class="ui segments filter-group">
             <div class="ui segment">
                 <div class="ui medium header">Filtering</div>
-                <i><b>After applying filter, check the affected cards / result above</b></i>
+                <i><b>After filtering, sorting, unfiltering, check the affected cards / result above</b></i>
+                <br>
+                <br>
+                <p>Try clicking on any button below</p>
             </div>
 
             <div class="ui segment">

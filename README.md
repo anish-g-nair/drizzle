@@ -70,7 +70,7 @@ grid.filter('[data-role="captain"]');
 ```
 
 ## Sorting
-To filter the children, use the **sort** method
+To sort the children, use the **sort** method
 ```javascript
 grid.sort(element, [options]);    
 ```
